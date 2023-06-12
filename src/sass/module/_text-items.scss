@@ -1,0 +1,16 @@
+@use "global" as *;
+
+
+.text-item + .text-item {
+    margin-top: rem(12);
+}
+
+.text-item p {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1;
+}
+
+.text-item p span {
+    
+    display: inline-block;
+}

@@ -1,0 +1,65 @@
+@use "global" as *;
+
+.pc-nav {
+    color: $white;
+    height: inherit;
+}
+
+.pc-nav__items {
+    display: flex;
+    height: inherit;
+}
+
+.pc-nav__item {
+    height: inherit;
+}
+
+.pc-nav__item a {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: rem(20);
+}
+
+.pc-nav__item:not(:last-child) a {
+    padding-right: rem(20);
+}
+
+
+.pc-nav__item a:hover {
+    opacity: 1;
+}
+
+.pc-nav__item a span {
+    display: block;
+    text-align: center;
+    position: relative;
+    font-size: rem(18);
+    line-height: 1;
+}
+
+.pc-nav__item a span::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: rem(1);
+    background-color: $white;
+    bottom: rem(-4);
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.pc-nav__item a span:hover::after {
+    @include mq('md') {
+        opacity: 1;
+    }
+    }
+
+.pc-nav__item a span span {
+    margin-top: rem(7);
+    font-size: rem(10);
+    text-align: center;
+    line-height: 1;
+}

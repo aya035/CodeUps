@@ -1,0 +1,69 @@
+@use "global" as *;
+
+.mv {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-height: rem(500);
+}
+
+.mv__inner {
+    width: 100%;
+    min-height: inherit;
+    height: inherit;
+    position: relative;
+}
+
+.mv__slider,
+.swiper-slide picture,
+.swiper-slide img {
+    min-height: inherit;
+    height: inherit;
+}
+
+.swiper-slide img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1440 / 768;
+}
+
+.mv__title-wrap {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 43.875%;
+    color: $white;
+
+    @include mq("md") {
+    top: 46.875%;
+
+    }
+}
+
+.mv__title {
+    text-align: center;
+    font-family: $second-font-family;
+    font-size: rem(40);
+    font-weight: $regular;
+    line-height: 1.2;
+    letter-spacing: 0.54em;
+    text-indent: 0.54em;
+
+    @include mq("md") {
+        font-size: rem(80);
+    }
+}
+
+.mv__sub-title {
+    text-align: center;
+    font-size: rem(20);
+    font-weight: $normal;
+    line-height: 1.66;
+    top: 69%;
+
+    @include mq("md") {
+        letter-spacing: 0.1em;
+
+    }
+}

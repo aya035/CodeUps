@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.table__item + .table__item {
+    margin-top: rem(48);
+
+    @include mq("md") {
+        margin-top: rem(34);
+
+    }
+}
