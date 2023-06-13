@@ -44,6 +44,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: rem(40);
+        row-gap: rem(80);
     }
 }
 
