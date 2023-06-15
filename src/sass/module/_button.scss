@@ -44,7 +44,10 @@
 }
 
 .button:hover::after {
-    transform: scale(1, 1);
+
+    @include mq("md") {
+        transform: scale(1, 1);
+    }
 }
 
 .button span {
@@ -68,11 +71,17 @@
 }
 
 .button:hover {
-    color: $green1;
-    opacity: 1;
+
+    @include mq("md") {
+        color: $green1;
+        opacity: 1;
+    }
 }
 
 
 .button:hover span::after {
-    background-image: url(../images/common/button-arrow2.png);
+
+    @include mq("md") {
+        background-image: url(../images/common/button-arrow2.png);
+    } 
 }

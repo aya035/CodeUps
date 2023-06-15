@@ -19,11 +19,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: rem(20);
+    padding-left: clamp(1rem, 1.389vw, 1.25rem);
 }
 
 .pc-nav__item:not(:last-child) a {
-    padding-right: rem(20);
+    padding-right: clamp(1rem, 1.389vw, 1.25rem);
 }
 
 
@@ -47,13 +47,14 @@
     background-color: $white;
     bottom: rem(-4);
     left: 0;
-    opacity: 0;
-    transition: opacity 0.3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;
+    transition: transform 0.3s;
 }
 
 .pc-nav__item a span:hover::after {
     @include mq('md') {
-        opacity: 1;
+        transform: scale(1, 1);
     }
     }
 
