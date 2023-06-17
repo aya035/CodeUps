@@ -2,7 +2,7 @@
 
 .footer {
     background-color: $green1;
-    padding-top: rem(48);
+    padding-top: rem(46);
     padding-bottom: rem(56);
 
     @include mq("md") {
@@ -61,15 +61,14 @@
 }
 
 .footer__copyright {
-    margin-top: rem(10);
+    margin-top: rem(26);
     display: flex;
     justify-content: center;
     font-size: rem(12);
     color: $white;
 
     @include mq("md") {
-        margin-top: rem(59);
-        letter-spacing: 0.09em;
+        margin-top: rem(55);
 
     }
 }
