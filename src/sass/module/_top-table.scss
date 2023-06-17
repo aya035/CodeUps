@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.table__item + .table__item {
+.top-table__item + .top-table__item {
     margin-top: rem(48);
 
     @include mq("md") {

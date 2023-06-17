@@ -16,7 +16,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   });
 
   //スライダー
-  var swiper = new Swiper('.js-mv-swiper', {
+  var swiper = new Swiper(".js-mv-swiper", {
     // Optional parameters
     loop: true,
     effect: "fade",
@@ -33,6 +33,10 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     slidesPerView: 1.26,
     breakpoints: {
       768: {
+        slidesPerView: 3.29,
+        spaceBetween: 30
+      },
+      1024: {
         slidesPerView: 3.49,
         spaceBetween: 40
       }
@@ -41,22 +45,23 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     speed: 2000,
     autoplay: {
     delay: 1000,
+    disableOnInteraction: false,
     },
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true,
     },
       // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   });
 
   // ページトップボタン
   $(document).ready(function(){
-    var pageTop = $("#page-top");
+    var pageTop = $(".js-pagetop");
     pageTop.hide();
     $(window).on("scroll",function () {
       if ($(this).scrollTop() > 100) {
@@ -67,18 +72,18 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
     
     // フッター手前でストップ
-    $("#page-top").hide();
+    $(".js-pagetop").hide();
     $(window).on("scroll", function () {
       var scrollHeight = $(document).height();
       var scrollPosition = $(window).height() + $(window).scrollTop();
       var footHeight = $("footer").innerHeight();
       if (scrollHeight - scrollPosition <= footHeight) {
-        $("#page-top").css({
+        $(".js-pagetop").css({
           "position": "absolute",
           "bottom": footHeight + 20
         });
       } else {
-        $("#page-top").css({
+        $(".js-pagetop").css({
           "position": "fixed",
           "bottom": 20
         });
@@ -97,25 +102,25 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 });
 
 //要素の取得とスピードの設定
-var box = $('.js-colorbox'),
-    speed = 700;  
+var box = $(".js-colorbox"),
+    speed = 700;
  
 //.colorboxの付いた全ての要素に対して下記の処理を行う
 box.each(function(){
     $(this).append('<div class="color"></div>')
-    var color = $(this).find($('.color')),
-    image = $(this).find('img');
+    var color = $(this).find($(".color")),
+    image = $(this).find("img");
     var counter = 0;
  
-    image.css('opacity','0');
-    color.css('width','0%');
+    image.css("opacity",'0');
+    color.css("width","0%");
     //inviewを使って背景色が画面に現れたら処理をする
-    color.on('inview', function(){
+    color.on("inview", function(){
         if(counter == 0){
-          $(this).delay(200).animate({'width':'100%'},speed,function(){
-                   image.css('opacity','1');
-                   $(this).css({'left':'0' , 'right':'auto'});
-                   $(this).animate({'width':'0%'},speed);
+          $(this).delay(200).animate({"width":"100%"},speed,function(){
+                   image.css("opacity","1");
+                   $(this).css({"left":"0" , "right":"auto"});
+                   $(this).animate({"width":"0%"},speed);
                 })
             counter = 1;
           }

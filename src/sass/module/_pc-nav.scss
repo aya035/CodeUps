@@ -2,7 +2,6 @@
 
 .pc-nav {
     color: $white;
-    height: inherit;
 }
 
 .pc-nav__items {
@@ -17,13 +16,19 @@
 .pc-nav__item a {
     height: inherit;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-left: clamp(1rem, 1.389vw, 1.25rem);
+    padding-right: clamp(1rem, 1.389vw, 1.25rem);
 }
 
-.pc-nav__item:not(:last-child) a {
-    padding-right: clamp(1rem, 1.389vw, 1.25rem);
+.pc-nav__item-en::first-letter {
+    text-transform: capitalize;
+}
+
+.pc-nav__item.pc-nav__item--faq a {
+    text-transform: uppercase;
 }
 
 
@@ -31,15 +36,18 @@
     opacity: 1;
 }
 
-.pc-nav__item a span {
+.pc-nav__item-wrap {
+    position: relative;
+}
+
+.pc-nav__item-en {
     display: block;
     text-align: center;
-    position: relative;
     font-size: rem(18);
     line-height: 1;
 }
 
-.pc-nav__item a span::after {
+.pc-nav__item-wrap::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -52,13 +60,14 @@
     transition: transform 0.3s;
 }
 
-.pc-nav__item a span:hover::after {
+.pc-nav__item a:hover .pc-nav__item-wrap::after {
     @include mq('md') {
         transform: scale(1, 1);
     }
-    }
+}
 
-.pc-nav__item a span span {
+.pc-nav__item-jp {
+    display: block;
     margin-top: rem(7);
     font-size: rem(10);
     text-align: center;

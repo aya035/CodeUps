@@ -1,16 +1,15 @@
 @use "global" as *;
 
 
-.text-item + .text-item {
+.access-texts__item + .access-texts__item {
     margin-top: rem(12);
 }
 
-.text-item p {
+.access-texts__item p {
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1;
 }
 
-.text-item p span {
-    
+.access-texts__item p span {
     display: inline-block;
 }

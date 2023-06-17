@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.table-item__title {
+.top-list__title {
     font-size: rem(16);
     font-weight: $bold;
     line-height: 1;
@@ -13,7 +13,7 @@
     }
 }
 
-.table-item__list {
+.top-list__item {
     margin-top: rem(16);
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@
     }
 }
 
-.table-item__list dt {
+.top-list__item dt {
     width: 80%;
     line-height: 1;
     font-size: rem(14);
@@ -34,7 +34,7 @@
     }
 }
 
-.table-item__list dd {
+.top-list__item dd {
     width: 20%;
     text-align: right;
     font-family: 'Noto Sans JP',sans-serif;

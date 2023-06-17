@@ -23,12 +23,7 @@
     }
 }
 
-.swiper-wrapper {
-    display: grid;
-    grid-auto-flow: column;
-}
-
-.swiper-slide img {
+.campaign__slider .swiper-slide img {
     aspect-ratio: 280 / 188;
     object-fit: cover;
     width: 100%;
@@ -55,24 +50,24 @@
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  background-repeat: no-repeat;
-  background-size: contain;
-  content: "";
-  height: rem(80);
-  width: rem(80);
-  display: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: rem(80);
+    width: rem(80);
+    display: none;
 
-  @include mq("md") {
+    @include mq("md") {
     display: block;
-}
+    }
 }
 
 .swiper-button-prev:after {
-  background-image: url(../images/common/prev-arrow.png);
+    background-image: url(../images/common/prev-arrow.png);
 }
 
 .swiper-button-next:after {
-  background-image: url(../images/common/next-arrow.png);
+    background-image: url(../images/common/next-arrow.png);
 }
 
 .swiper-button-prev, .swiper-rtl .swiper-button-next {
