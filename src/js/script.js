@@ -47,15 +47,10 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     delay: 1000,
     disableOnInteraction: false,
     },
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-      // Navigation arrows
+    // Navigation arrows
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".js-campaign-button-next",
+      prevEl: ".js-campaign-button-prev",
     },
   });
 
@@ -77,16 +72,39 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       var scrollHeight = $(document).height();
       var scrollPosition = $(window).height() + $(window).scrollTop();
       var footHeight = $("footer").innerHeight();
+     
       if (scrollHeight - scrollPosition <= footHeight) {
         $(".js-pagetop").css({
-          "position": "absolute",
-          "bottom": footHeight + 20
+          "border-color": "#fff",
         });
+        //ドキュメントスタイルの取得
+        var sheets = document.styleSheets
+        var sheet = sheets[sheets.length - 1];
+
+        //スタイルルールの追加
+        sheet.insertRule(
+          '.js-pagetop::before { border-color:#fff }',
+          sheet.cssRules.length
+        );
+        sheet.insertRule(
+          '.js-pagetop::after { background-color:#fff }',
+          sheet.cssRules.length
+        );
       } else {
         $(".js-pagetop").css({
-          "position": "fixed",
-          "bottom": 20
+          "border-color": "#408F95",
         });
+
+        var sheets = document.styleSheets
+        var sheet = sheets[sheets.length - 1];
+        sheet.insertRule(
+          '.js-pagetop::before { border-color:#408F95 }',
+          sheet.cssRules.length
+        );
+        sheet.insertRule(
+          '.js-pagetop::after { background-color:#408F95 }',
+          sheet.cssRules.length
+        );
       }
     });
     pageTop.click(function () {
@@ -125,4 +143,10 @@ box.each(function(){
             counter = 1;
           }
      });
+
+  $(function () {
+  $(window).on("load", function () {
+    $(".js-load").fadeOut(700);
+  });
+  });
 });

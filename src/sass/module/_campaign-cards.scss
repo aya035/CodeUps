@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.campaign-cards {
+.campaign-cards__items {
     display: grid;
     grid-auto-flow: column;
 }

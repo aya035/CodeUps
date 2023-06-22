@@ -4,7 +4,7 @@
     text-align: center;
 }
 
-.heading__main {
+.heading__sub {
     font-size: rem(32);
     font-weight: $normal;
     line-height: 1;
@@ -14,32 +14,32 @@
     }
 }
 
-.heading__main::first-letter {
+.heading__sub::first-letter {
     text-transform: capitalize;
 }
 
-.heading__main::first-letter {
+.heading__sub::first-letter {
     color: $green1;
 }
 
-.heading__main.heading__main--white {
+.heading__sub.heading__sub--white {
 
     @include mq("md") {
         color: $white;
     }
 }
 
-.heading__main.heading__main--white::first-letter {
+.heading__sub.heading__sub--white::first-letter {
     @include mq("md") {
         color: $white;
     }
 }
 
-.heading__main.heading__main--big {
+.heading__sub.heading__sub--big {
     font-size: rem(80);
 }
 
-.heading__sub {
+.heading__main {
     margin-top: rem(10);
     font-size: rem(12);
     font-weight: $normal;
@@ -50,13 +50,13 @@
     }
 }
 
-.heading__sub.heading__sub--white {
+.heading__main.heading__main--white {
 
     @include mq("md") {
         color: $white;
     }
 }
 
-.heading__sub.heading__sub--big {
+.heading__main.heading__main--big {
     margin-top: rem(-5);
 }
