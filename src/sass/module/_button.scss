@@ -17,6 +17,10 @@
     z-index: 1;
 }
 
+.button::first-letter {
+    text-transform: uppercase;
+}
+
 .button::before {
     content: "";
     position: absolute;

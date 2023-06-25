@@ -12,7 +12,7 @@
         width: rem(301);
         height: rem(138);
         top: rem(-121);
-        left: calc(25% - 23.4vw);
+        left: clamp(-52px, (100% - 100vw)/2, 0px);
         background-image: url(../images/common/fish2.png);
         background-repeat: no-repeat;
         background-position: center;
@@ -28,7 +28,7 @@
         width: rem(71);
         height: rem(162);
         bottom: rem(-70);
-        right: calc(20% - 14vw);
+        right: clamp(21px, (100% - 100vw)/2, 0px);
         background-image: url(../images/common/seahorse.png);
         background-repeat: no-repeat;
         background-position: center;

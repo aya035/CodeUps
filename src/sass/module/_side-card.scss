@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.side-card {
+    box-shadow: rem(2) rem(2) rem(10) rgba($color: $black2, $alpha: 0.25);
+    background-color: $white;
+}
+
+.side-card__link {
+    display: flex;
+    padding: rem(16);
+}
+
+.side-card__img-wrap {
+    width: 46.1832%;
+}
+
+.side-card__img-wrap img {
+    aspect-ratio: 121 / 90;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.side-card__body {
+    width: 47.71%;
+    margin-left: rem(16);
+}
+
+.side-card__date {
+    display: inline-block;
+    font-size: rem(12);
+    line-height: 1;
+}
+
+.side-card__title {
+    line-height: 1.5;
+    font-weight: $medium;
+}

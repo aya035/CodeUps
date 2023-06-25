@@ -1,0 +1,120 @@
+@use "global" as *;
+
+.information-body__inner {
+    position: relative;
+}
+
+.information-body__inner::after {
+    content: "";
+    position: absolute;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-24);
+    left: rem(15);
+    background-image: url(../images/common/fish2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+
+    @include mq("md") {
+        width: rem(301);
+        height: rem(138);
+        top: rem(-70);
+        left: clamp(-52px, (100% - 100vw)/2, 0px);
+    }
+
+}
+
+.information-body__content-group {
+    margin-top: rem(16);
+
+    @include mq("md") {
+        margin-top: rem(24);
+    }
+}
+
+.information-body__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: rem(19);
+    row-gap: rem(16);
+
+    @include mq("md") {
+        column-gap: rem(90);
+    }
+}
+
+.information-body__tab {
+    width: rem(102);
+    padding: rem(10) 0;
+    align-items: center;
+    font-family: 'Noto Sans JP';
+    font-size: rem(14);
+    line-height: 1.42857;
+    background-color: $green2;
+    border: rem(1) solid $green1;
+    cursor: pointer;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include mq("md") {
+        padding: rem(29) 0 rem(26);
+        max-width: rem(300);
+        font-size: rem(24);
+    }
+}
+
+.information-body__tab span {
+    @include mq("md") {
+        padding-left: rem(72);
+        position: relative;
+        color: $green1;
+    }
+}
+
+.information-body__tab span::before {
+
+    @include mq("md") {
+        position: absolute;
+        content: "";
+        width: rem(64);
+        height: rem(64);
+        mask-image: url(../images/common/whale-icon.png);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: cover;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        background-color: $green1;
+    }
+}
+
+.information-body__tab.information-body__tab--shark span::before {
+    mask-image: url(../images/common/shark-icon.png);
+}
+
+.information-body__tab.information-body__tab--fish span::before {
+    mask-image: url(../images/common/fish-icon.png);
+}
+
+.information-body__tab.current {
+    background-color: $green1;
+}
+
+.information-body__tab.current span {
+    color: $white;
+}
+
+.information-body__tab.current span::before {
+    background-color: $white;
+}
+
+.information-body__content-wrap {
+    display: none;
+    width: 100%;
+}

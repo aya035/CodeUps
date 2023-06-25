@@ -40,7 +40,7 @@
         width: rem(301);
         height: rem(138);
         top: rem(-76);
-        left: calc(20% - 18vw);
+        left: clamp(rem(-36), (100% - 100vw)/2, rem(0));
         background-image: url(../images/common/fish1.png);
         background-repeat: no-repeat;
         background-position: center;

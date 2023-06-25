@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.blog-side-heading {
+    border-left: 8px solid $green1;
+    padding: rem(8) 0 rem(8) rem(16);
+    font-size: rem(24);
+}
+
+.blog-side-heading__main span {
+    padding-left: rem(60);
+    position: relative;
+}
+
+.blog-side-heading__main span::before {
+    position: absolute;
+    content: "";
+    width: rem(50);
+    height: rem(50);
+    background-image: url(../images/common/whale-black-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}

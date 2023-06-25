@@ -1,0 +1,95 @@
+@use "global" as *;
+
+.pagination-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-wrap__button-prev {
+    width: rem(38);
+    height: rem(38);
+    border: rem(1) solid $green1;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.pagination-wrap__button-prev:hover {
+    background-color: $green1;
+}
+
+.pagination-wrap__button-prev::before {
+    content: "";
+    position: absolute;
+    width: rem(10);
+    height: rem(10);
+    top: rem(13);
+    left: 43%;
+    border-top: rem(1) solid $green1;
+    border-left: rem(1) solid $green1;
+    transform: rotate(-45deg);
+}
+
+.pagination-wrap__button-prev:hover::before {
+    border-color: $white;
+}
+
+.pagination-wrap__pagination-items {
+    margin-left: rem(40);
+    display: flex;
+}
+
+.pagination-wrap__pagination-item {
+    width: rem(38);
+    height: rem(38);
+    border: rem(1) solid $green1;
+    text-align: center;
+    font-family: $second-font-family;
+    font-weight: $bold;
+    color: $green1;
+    padding: rem(7) 0;
+    cursor: pointer;
+}
+
+.pagination-wrap__pagination-item.current {
+    color: $white;
+    background-color: $green1;
+}
+
+.pagination-wrap__pagination-item + .pagination-wrap__pagination-item {
+    margin-left: rem(12);
+}
+
+.pagination-wrap__button-next {
+    margin-left: rem(40);
+    width: rem(38);
+    height: rem(38);
+    border: rem(1) solid $green1;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.pagination-wrap__button-next:hover {
+    background-color: $green1;
+}
+
+.pagination-wrap__button-next.pagination-wrap__button-next--margin {
+    margin-left: rem(82);
+}
+
+.pagination-wrap__button-next::before {
+    content: "";
+    position: absolute;
+    width: rem(10);
+    height: rem(10);
+    top: rem(13);
+    left: 33%;
+    border-top: rem(1) solid $green1;
+    border-right: rem(1) solid $green1;
+    transform: rotate(45deg);
+}
+
+.pagination-wrap__button-next:hover::before {
+    border-color: $white;
+}

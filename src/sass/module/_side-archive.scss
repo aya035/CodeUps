@@ -1,0 +1,60 @@
+@use "global" as *;
+
+.side-archive__year span {
+    font-family: "Noto Sans JP";
+    font-size: rem(24);
+    line-height: 1;
+    color: $green1;
+    padding-left: rem(32);
+    position: relative;
+}
+
+.side-archive__year span::before {
+    content: "";
+    position: absolute;
+    width: rem(24);
+    height: rem(24);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-image: url(../images/common/side-archive-arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.side-archive__month span {
+    font-family: "Noto Sans JP";
+    font-size: rem(24);
+    line-height: 1;
+    color: $green1;
+    padding-left: rem(32);
+    position: relative;
+}
+
+.side-archive__month span::before {
+    content: "";
+    position: absolute;
+    width: rem(24);
+    height: rem(24);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-image: url(../images/common/side-archive-arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.side-archive__items {
+    margin-top: rem(8);
+    padding-left: rem(24);
+}
+
+.side-archive__item + .side-archive__item {
+    margin-top: rem(8);
+}
+
+.side-archive__list + .side-archive__list {
+    margin-top: rem(8);
+}

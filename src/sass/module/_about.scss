@@ -12,12 +12,43 @@
         width: rem(194);
         height: rem(181);
         bottom: rem(-90);
-        right: calc(25% - 24.5vw);
+        right: clamp(-74px, (100% - 100vw)/2, 0px);
         background-image: url(../images/common/coral.png);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
     }
+}
+
+.about__inner.about__inner--change-illustration::before {
+
+    @include mq("md") {
+        width: rem(301);
+        height: rem(138);
+        background-image: url(../images/common/fish3.png);
+        bottom: rem(-178);
+    }
+}
+
+.about__inner.about__inner--change-illustration::after {
+    content: "";
+    position: absolute;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-24);
+    left: rem(15);
+    background-image: url(../images/common/fish2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include mq("md") {
+        width: rem(301);
+        height: rem(138);
+        top: rem(-70);
+        left: clamp(-52px, (100% - 100vw)/2, 0px);
+    }
+
 }
 
 .about__img-wrap {
@@ -27,6 +58,10 @@
         margin-top: rem(40);
     }
 
+}
+
+.about__img-wrap.about__img-wrap--noheading {
+    margin-top: 0;
 }
 
 .about__img-small {
@@ -57,6 +92,18 @@
     }
 }
 
+.about__img-big.about__img-big--bigger {
+    margin-top: 0;
+    width: 100%;
+
+    @include mq("md") {
+        width: 81.45%;
+        margin-top: -48.5%;
+        margin-left: auto;
+        z-index: 1;
+    }
+}
+
 .about__img-big img {
     aspect-ratio: 281 / 186;
     object-fit: cover;
@@ -82,6 +129,14 @@
     }
 }
 
+.about__content-wrap.about__content-wrap--erase {
+    display: contents;
+
+    @include mq("md") {
+        display: flex;
+    }
+}
+
 .about__title {
     font-size: rem(40);
     font-weight: $regular;
@@ -96,6 +151,17 @@
     }
 }
 
+.about__title.about__title--on-img {
+    position: absolute;
+    top: rem(24);
+    left: rem(39);
+    color: $white;
+
+    @include mq("md") {
+        position: static;
+    }
+}
+
 .about__text-wrap {
     margin-top: rem(19);
 
@@ -103,6 +169,14 @@
         margin-top: 0;
         margin-left: rem(38);
         width: 50%;
+    }
+}
+
+.about__text-wrap.about__text-wrap--about-margin {
+    margin-top: rem(40);
+
+    @include mq("md") {
+        margin-top: 0;
     }
 }
 

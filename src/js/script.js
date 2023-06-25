@@ -117,7 +117,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         return false;
     });
   });
-});
 
 //要素の取得とスピードの設定
 var box = $(".js-colorbox"),
@@ -143,10 +142,63 @@ box.each(function(){
             counter = 1;
           }
      });
+});
 
   $(function () {
   $(window).on("load", function () {
     $(".js-load").fadeOut(700);
   });
   });
+
+  // Campaignタブメニュー
+ $(function () {
+  // 最初のコンテンツは表示
+  $(".js-campaign-content:first-of-type").css("display", "block");
+  // タブをクリックすると
+  $(".js-campaign-tab").on("click", function () {
+    // 現在選択されているタブからcurrentを外す
+    $(".current").removeClass("current");
+    // クリックされたタブにcurrentクラスを付与
+    $(this).addClass("current");
+    // クリックされた要素が何番目か取得（クリックしたタブのインデックス番号を取得）
+    const index = $(this).index();
+    // クリックしたタブのインデックス番号と同じコンテンツを表示
+    $(".js-campaign-content").hide().eq(index).fadeIn(300);
+  });
+});
+
+//モーダル
+$(function() { 
+  $('.js-modal-open').click(function() {
+          var imgSrc = $(this).children().attr('src');
+          $('.js-large-img').children().attr('src', imgSrc);
+          $('.modal').fadeIn();
+          $('body,html').css('overflow-y', 'hidden');
+          return false
+        });
+  
+  $('.js-modal-close').click(function() {
+          $('.modal').fadeOut();
+          $('body,html').css('overflow-y', 'visible');
+          return false
+        });
+  });
+
+  // informationタブメニュー
+ $(function () {
+  // 最初のコンテンツは表示
+  $(".js-information-content:first-of-type").css("display", "block");
+  // タブをクリックすると
+  $(".js-information-tab").on("click", function () {
+    // 現在選択されているタブからcurrentを外す
+    $(".current").removeClass("current");
+    // クリックされたタブにcurrentクラスを付与
+    $(this).addClass("current");
+    // クリックされた要素が何番目か取得（クリックしたタブのインデックス番号を取得）
+    const index = $(this).index();
+    // クリックしたタブのインデックス番号と同じコンテンツを表示
+    $(".js-information-content").hide().eq(index).fadeIn(300);
+  });
+});
+
 });

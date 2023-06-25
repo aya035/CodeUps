@@ -1,0 +1,91 @@
+@use "global" as *;
+
+.campaign-body__inner {
+    position: relative;
+}
+
+.campaign-body__inner::after {
+    content: "";
+    position: absolute;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-24);
+    left: rem(15);
+    background-image: url(../images/common/fish2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+
+    @include mq("md") {
+        width: rem(301);
+        height: rem(138);
+        top: rem(-70);
+        left: clamp(-52px, (100% - 100vw)/2, 0px);
+    }
+
+}
+
+.campaign-body__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: rem(21);
+    row-gap: rem(16);
+}
+
+.campaign-body__tab {
+    width: rem(162);
+    padding: rem(6) 0;
+    align-items: center;
+    font-family: 'Noto Sans JP';
+    font-size: rem(14);
+    background-color: $white;
+    color: $green1;
+    border: rem(1) solid $green1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
+.campaign-body__tab.current {
+    background-color: $green1;
+    color: $white;
+}
+
+.campaign-body__content-group {
+    margin-top: rem(40);
+    padding-left: rem(32);
+    padding-right: rem(32);
+
+    @include mq("md") {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.campaign-body__content-wrap {
+    display: none;
+    width: 100%;
+}
+
+.campaign-body__items {
+    
+    @include mq("md") {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: rem(40);
+        row-gap: rem(80);
+    }
+}
+
+.campaign-body__item + .campaign-body__item {
+    margin-top: rem(40);
+
+    @include mq("md") {
+        margin-top: 0;
+    }
+}
+
+.campaign-body__button-wrap {
+    margin-top: rem(80);
+}
