@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.button {
+.button-green {
     display: inline-block;
     width: rem(202);
     padding: rem(19) 0;
@@ -10,18 +10,18 @@
     line-height: 1;
     cursor: pointer;
     text-align: center;
-    background-color: $green1;
-    color: $white;
+    background-color: $white;
+    color: $green1;
     transition: color 0.2s;
-    border: rem(1) solid $green1;
+    border: rem(1) solid $white;
     z-index: 1;
 }
 
-.button::first-letter {
+.button-green::first-letter {
     text-transform: uppercase;
 }
 
-.button::before {
+.button-green::before {
     content: "";
     position: absolute;
     top: 0;
@@ -29,12 +29,12 @@
     bottom: 0;
     right: 0;
     transform: translate(rem(4), rem(4));
-    border: rem(1) solid $green1;
+    border: rem(1) solid $white;
     z-index: -2;
 }
 
-.button::after {
-    background-color: $white;
+.button-green::after {
+    background-color: $green1;
     position: absolute;
     top: 0;
     left: 0;
@@ -47,19 +47,19 @@
     z-index: -1;
 }
 
-.button:hover::after {
+.button-green:hover::after {
 
     @include mq("md") {
         transform: scale(1, 1);
     }
 }
 
-.button span {
+.button-green span {
     padding-right: rem(48);
     position: relative;
 }
 
-.button span::after {
+.button-green span::after {
     content: "";
     position: absolute;
     width: rem(40);
@@ -67,30 +67,25 @@
     top: 40.74%;
     transform: translateY(-50%);
     right: 0;
-    background-image: url(../images/common/button-arrow1.png);
+    background-image: url(../images/common/button-arrow2.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     transition: 0.2s background-color;
 }
 
-.button:hover {
+.button-green:hover {
 
     @include mq("md") {
-        color: $green1;
+        color: $white;
         opacity: 1;
     }
 }
 
 
-.button:hover span::after {
+.button-green:hover span::after {
 
     @include mq("md") {
-        background-image: url(../images/common/button-arrow2.png);
+        background-image: url(../images/common/button-arrow1.png);
     }
-}
-
-.button__text {
-    color: $white;
-    text-transform: capitalize;
 }

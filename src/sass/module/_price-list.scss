@@ -1,0 +1,94 @@
+@use "global" as *;
+
+.price-list {
+    border: rem(1) solid $green1;
+
+    @include mq("md") {
+        display: flex;
+    }
+}
+
+.price-list__title {
+    text-align: center;
+    font-size: rem(16);
+    font-weight: bold;
+    border-bottom: rem(1) solid $green1;
+    padding: rem(8) 0;
+    background-color: $green1;
+    color: $white;
+
+    @include mq("md") {
+        width: rem(200);
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.price-list__title span {
+    padding-left: rem(32);
+    position: relative;
+
+    @include mq("md") {
+        padding-left: 0;
+        padding-bottom: rem(72);
+    }
+}
+
+.price-list__title span::before {
+    content: "";
+    position: absolute;
+    width: rem(24);
+    height: rem(24);
+    background-image: url(../images/common/whale-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+
+    @include mq("md") {
+        width: rem(64);
+        height: rem(64);
+        top: rem(32);
+        transform: translateY(0);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.price-list__item {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq("md") {
+        width: calc(100% - rem(200));
+    }
+}
+
+.price-list__item dt,
+.price-list__item dd {
+    border-bottom: rem(1) solid $green1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: rem(60);
+    line-height: 1.5;
+}
+
+.price-list__item dt {
+    width: 67.729%;
+    border-right: rem(1) solid $green1;
+    text-align: center;
+}
+
+.price-list__item dd {
+    width: calc(100% - 67.729%);
+    text-align: right;
+    font-family: "Noto Sans JP";
+    padding-right: rem(16);
+
+}

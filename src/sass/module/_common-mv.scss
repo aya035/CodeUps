@@ -66,6 +66,22 @@
     }
 }
 
+.common-mv__title span {
+    text-transform: uppercase;
+}
+
 .common-mv__title::first-letter {
     text-transform: uppercase;
+}
+
+.common-mv__title.common-mv__title--faq {
+    text-transform: uppercase;
+}
+
+.common-mv__title.common-mv__title--capitalize {
+    text-transform: capitalize;
+}
+
+.common-mv__title.common-mv__title--capitalize span {
+    text-transform: none;
 }

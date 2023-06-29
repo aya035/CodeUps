@@ -1,0 +1,213 @@
+@use "global" as *;
+
+.form__error {
+    display: none;
+    margin: 0 auto;
+}
+
+.form__error.is-active {
+    display: block;
+}
+
+.form__error-text {
+    font-size: rem(14);
+    line-height: calc(20 / 14);
+    color: #C94800;
+    padding-left: 1em;
+    text-indent: -1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__list.is-active {
+    margin-top: rem(40);
+}
+
+.form__item {
+    padding-bottom: rem(24);
+    border-bottom: rem(1) dotted $green1;
+
+    @include mq("md") {
+        padding-bottom: rem(40);
+    }
+}
+
+.form__item:not(:first-child) {
+    margin-top: rem(24);
+
+    @include mq("md") {
+        margin-top: rem(40);
+    }
+}
+
+.form__content-wrap {
+
+    @include mq("md") {
+        display: flex;
+    }
+}
+
+.form__label {
+
+    @include mq("md") {
+        width: calc(100% - 68.5714%);
+    }
+}
+
+.form__label span {
+    display: inline-block;
+    margin-left: rem(8);
+    width: rem(61);
+    padding: rem(2) 0;
+    text-align: center;
+    font-size: rem(12);
+    background-color: #C94800;
+    color: $white;
+}
+.form__input {
+    margin-top: rem(16);
+
+    @include mq("md") {
+        margin-top: 0;
+        width: 68.5714%;
+    }
+}
+
+.form__input.form__input--checkbox {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8);
+}
+
+select {
+    background-image: url(../images/common/select-arrow.png);
+    background-position: right rem(8) top rem(9);
+    background-repeat: no-repeat;
+    background-size: rem(12) rem(10);
+}
+
+.form__input-text {
+    width: 100%;
+    padding: rem(8) rem(16);
+    border: rem(1) solid $green1;
+}
+
+.form__input-text.is-active {
+    border: rem(1) solid #C94800;
+    background-color: rgba($color: #C94800, $alpha: 0.2);
+}
+
+.form__input-text::placeholder {
+    color: $green2;
+}
+
+.form__input-text.is-active::placeholder {
+    color: $white;
+}
+
+.form__input-text + span {
+    display: block;
+    padding-left: rem(22);
+    position: relative;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.form__input-text + span::before {
+    content: "";
+    position: absolute;
+    width: rem(14);
+    height: rem(14);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid $green1;
+}
+
+.form__input-text + span::after {
+    content: "";
+    position: absolute;
+    width: rem(10.5);
+    height: rem(7.5);
+    left: rem(3);
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(../images/common/check-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+}
+
+
+input:checked + span::after {
+    opacity: 1;
+}
+
+.form__input-text.form__input-text--textarea {
+    height: rem(200);
+    resize: none;
+}
+
+.form__privacy {
+    margin-top: rem(40);
+
+    @include mq("md") {
+        margin-top: rem(80);
+        text-align: center;
+    }
+}
+
+.form__privacy-text {
+    font-size: rem(14);
+    line-height: calc(22 / 14);
+}
+
+.form__privacy-text + span {
+    display: inline-block;
+    padding-left: rem(30);
+    position: relative;
+
+    @include mq("md") {
+        padding-left: rem(38);
+    }
+}
+
+.form__privacy-text + span::before {
+    content: "";
+    position: absolute;
+    width: rem(22);
+    height: rem(22);
+    top: 0;
+    left: 0;
+    border: rem(1) solid $green1;
+    background-color: $white;
+}
+
+.form__privacy-text + span::after {
+    content: "";
+    position: absolute;
+    width: rem(17.5);
+    height: rem(12.5);
+    left: rem(5);
+    top: rem(5);
+    background-image: url(../images/common/check-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+}
+
+input:checked + span::after {
+    opacity: 1;
+}
+
+.form__button {
+    text-align: center;
+    margin-top: rem(24);
+
+    @include mq("md") {
+        margin-top: rem(40);
+    }
+}

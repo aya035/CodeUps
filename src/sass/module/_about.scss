@@ -12,7 +12,7 @@
         width: rem(194);
         height: rem(181);
         bottom: rem(-90);
-        right: clamp(-74px, (100% - 100vw)/2, 0px);
+        right: calc(50% - min(48.5vw, rem(640)));
         background-image: url(../images/common/coral.png);
         background-repeat: no-repeat;
         background-position: center;
@@ -28,27 +28,6 @@
         background-image: url(../images/common/fish3.png);
         bottom: rem(-178);
     }
-}
-
-.about__inner.about__inner--change-illustration::after {
-    content: "";
-    position: absolute;
-    width: rem(120);
-    height: rem(55);
-    top: rem(-24);
-    left: rem(15);
-    background-image: url(../images/common/fish2.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    @include mq("md") {
-        width: rem(301);
-        height: rem(138);
-        top: rem(-70);
-        left: clamp(-52px, (100% - 100vw)/2, 0px);
-    }
-
 }
 
 .about__img-wrap {

@@ -1,0 +1,50 @@
+@use "global" as *;
+
+.error-body {
+    padding: rem(52) 0 rem(40);
+
+    @include mq("md") {
+        padding: rem(119) 0 rem(148);
+    }
+}
+
+.error-body__inner {
+    position: relative;
+}
+
+.error-body__inner::after {
+    content: "";
+    position: absolute;
+    width: rem(345);
+    height: rem(345);
+    top: rem(-80);
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url(../images/common/whale-404-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include mq("md") {
+        width: rem(698);
+        height: rem(698);
+        top: rem(-147);
+        left: 0;
+        transform: translateX(0);
+    }
+}
+
+.error-body__message {
+    text-align: center;
+    color: $white;
+    line-height: calc(24 / 16);
+}
+
+.error-body__button {
+    text-align: center;
+    margin-top: rem(40);
+
+    @include mq("md") {
+        margin-top: rem(80);
+    }
+}

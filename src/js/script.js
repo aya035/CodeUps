@@ -168,20 +168,20 @@ box.each(function(){
 });
 
 //モーダル
-$(function() { 
-  $('.js-modal-open').click(function() {
-          var imgSrc = $(this).children().attr('src');
-          $('.js-large-img').children().attr('src', imgSrc);
-          $('.modal').fadeIn();
-          $('body,html').css('overflow-y', 'hidden');
-          return false
-        });
-  
-  $('.js-modal-close').click(function() {
-          $('.modal').fadeOut();
-          $('body,html').css('overflow-y', 'visible');
-          return false
-        });
+  $(function () {
+    $('.js-modal-open').click(function () {
+      var imgSrc = $(this).children().attr('src');
+      $('.js-large-img').children().attr('src', imgSrc);
+      $('.modal, .modal__bg, .js-large-img').fadeIn();
+      $('body,html').css('overflow-y', 'hidden');
+      return false
+    });
+
+    $('.js-modal-close').click(function () {
+      $('.modal, .modal__bg, .js-large-img').fadeOut();
+      $('body,html').css('overflow-y', 'visible');
+      return false
+    });
   });
 
   // informationタブメニュー
@@ -200,5 +200,36 @@ $(function() {
     $(".js-information-content").hide().eq(index).fadeIn(300);
   });
 });
+
+// voiceタブメニュー
+$(function () {
+  // 最初のコンテンツは表示
+  $(".js-voice-content:first-of-type").css("display", "block");
+  // タブをクリックすると
+  $(".js-voice-tab").on("click", function () {
+    // 現在選択されているタブからcurrentを外す
+    $(".current").removeClass("current");
+    // クリックされたタブにcurrentクラスを付与
+    $(this).addClass("current");
+    // クリックされた要素が何番目か取得（クリックしたタブのインデックス番号を取得）
+    const index = $(this).index();
+    // クリックしたタブのインデックス番号と同じコンテンツを表示
+    $(".js-voice-content").hide().eq(index).fadeIn(300);
+  });
+});
+
+//アコーディオン
+$(function () {
+  $(".js-accordion__item:first-child .js-accordion__content").css(
+    "display",
+    "block"
+  );
+  $(".js-accordion__item:first-child .js-accordion__title").addClass("is-open");
+  $(".js-accordion__title").on("click", function () {
+    $(this).toggleClass("is-open");
+    $(this).next().slideToggle(300);
+  });
+});
+
 
 });

@@ -1,39 +1,39 @@
 @use "global" as *;
 
-.blog-body-side__cards {
+.side-bar__cards {
     margin-top: rem(24);
 }
 
-.blog-body-side__card + .blog-body-side__card {
+.side-bar__card + .side-bar__card {
     margin-top: rem(40);
 }
 
-.blog-body-side__item + .blog-body-side__item {
+.side-bar__item + .side-bar__item {
     margin-top: rem(80);
 }
 
-.blog-body-side__voice-cards {
+.side-bar__voice-cards {
     margin-top: rem(24);
 }
 
-.blog-body-side__voice-button {
+.side-bar__voice-button {
     margin-top: rem(40);
     text-align: center;
 }
 
-.blog-body-side__cards {
+.side-bar__cards {
     margin-top: rem(40);
 }
 
-.blog-body-side__card {
+.side-bar__card {
     margin-top: rem(40);
 }
 
-.blog-body-side__campaign-button {
+.side-bar__campaign-button {
     margin-top: rem(40);
     text-align: center;
 }
 
-.blog-body-side__archive {
+.side-bar__archive {
     margin-top: rem(24);
 }

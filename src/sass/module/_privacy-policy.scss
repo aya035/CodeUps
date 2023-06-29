@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.privacy-policy-body__content {
+    
+    @include mq("md") {
+        max-width: rem(800);
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.privacy-policy-body__title {
+    font-size: rem(24);
+    font-weight: $medium;
+
+    @include mq("md") {
+        font-size: rem(32);
+    }
+}
+
+.privacy-policy-body__lists {
+    margin-top: rem(40);
+    font-family: "Noto Sans JP";
+    line-height: calc(32 / 16);
+}
+
+.privacy-policy-body__item.privacy-policy-body__item--top {
+    margin-top: rem(40);
+}
+
+.privacy-policy-body__list + .privacy-policy-body__list {
+    margin-top: rem(40);
+}
+
+.privacy-policy-body__item:not(:first-child) {
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+}

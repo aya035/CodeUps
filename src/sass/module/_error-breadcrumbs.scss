@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.error-breadcrumbs {
+    padding-top: rem(66);
+
+    @include mq("md") {
+        padding-top: rem(98);
+    }
+}
+
+.error-body__text {
+    text-align: center;
+    font-family: $second-font-family;
+    font-size: rem(80);
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    color: $white;
+
+    @include mq("md") {
+        font-size: rem(160);
+    }
+}

@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.terms-of-service-body__content {
+    
+    @include mq("md") {
+        max-width: rem(800);
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.terms-of-service-body__title {
+    font-size: rem(24);
+    font-weight: $medium;
+
+    @include mq("md") {
+        font-size: rem(32);
+    }
+}
+
+.terms-of-service-body__lists {
+    margin-top: rem(40);
+    font-family: "Noto Sans JP";
+    line-height: calc(32 / 16);
+}
+
+.terms-of-service-body__list.terms-of-service-body__list--top {
+    margin-top: rem(40);
+}
+
+.terms-of-service-body__item:nth-child(2) {
+    margin-top: rem(40);
+}
+
+.terms-of-service-body__item:not(:first-child) {
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+}

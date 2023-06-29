@@ -1,17 +1,17 @@
 @use "global" as *;
 
-.blog-side-heading {
+.side-heading {
     border-left: 8px solid $green1;
     padding: rem(8) 0 rem(8) rem(16);
     font-size: rem(24);
 }
 
-.blog-side-heading__main span {
+.side-heading__main span {
     padding-left: rem(60);
     position: relative;
 }
 
-.blog-side-heading__main span::before {
+.side-heading__main span::before {
     position: absolute;
     content: "";
     width: rem(50);

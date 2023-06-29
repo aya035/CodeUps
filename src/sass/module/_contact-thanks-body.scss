@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.contact-thanks-body__content {
+    text-align: center;
+    line-height: calc(23 / 16);
+}
+
+.contact-thanks-body__message {
+    margin-top: rem(40);
+}

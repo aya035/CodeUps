@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 9999;
+}
+
+.modal__bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #202020, $alpha: 0.8);
+    z-index: 9998;
+}
+
+.modal__large-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    max-width: 920px;
+    width: 100%;
+}
+
+.modal__large-img img {
+    object-fit: cover;
+    aspect-ratio: calc(920 / 586);
+    width: 100%;
+}
